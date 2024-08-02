@@ -1,5 +1,13 @@
-# The types of the elements of the input are not know
-def safe_first_element(lst):
+#!/usr/bin/env python3
+"""duck typed"""
+from typing import Any, Sequence, Union
+
+
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    """
+    Args:
+    Returns:
+    """
     if lst:
         return lst[0]
     else:
