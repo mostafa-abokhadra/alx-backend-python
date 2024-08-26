@@ -70,6 +70,8 @@ class TestMemoize(unittest.TestCase):
             @memoize
             def a_property(self) -> callable:
                 """ a property
+                Returns:
+                    a callable: a_mehtod
                 """
                 return self.a_method()
 
