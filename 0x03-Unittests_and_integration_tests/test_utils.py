@@ -57,7 +57,8 @@ class TestMemoize(unittest.TestCase):
         """test memoize function
         """
         class TestClass:
-
+            """inside calss that i don't know why we used it
+            """
             def a_method(self) -> int:
                 """cached method to be tested
                 Returns:
@@ -72,7 +73,6 @@ class TestMemoize(unittest.TestCase):
                     a callable: a_mehtod
                 """
                 return self.a_method()
-
         with patch.object(TestClass, "a_method") as mock_method:
             mock_method.return_value = 42
             obj = TestClass()
