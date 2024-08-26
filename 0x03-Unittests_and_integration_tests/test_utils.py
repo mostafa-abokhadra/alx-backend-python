@@ -2,9 +2,10 @@
 """testing access_nested_map module
 """
 import unittest
+from unittest.mock import Mock, patch
 from parameterized import parameterized
 access_nested_map = __import__('utils').access_nested_map
-
+get_json = __import__('utils').get_json
 
 class TestAccessNestedMap(unittest.TestCase):
     """ testing access_nested_map_class
@@ -25,3 +26,10 @@ class TestAccessNestedMap(unittest.TestCase):
     )
     def test_access_nested_map_exception(self, nested_map, path):
         self.assertRaises(KeyError, access_nested_map, nested_map, path)
+
+class TestGetJson(unittest.TestCase):
+    """testing get json
+    """
+    def test_get_json(self):
+        """testing http requ
+        """
