@@ -16,3 +16,12 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map(self, nested_map, path, result):
         """testing ..."""
         self.assertEqual(access_nested_map(nested_map, path), result)
+    
+    @parameterized.expand(
+        [
+            (),
+            ()
+        ]
+    )
+    def test_access_nested_map_exception(self):
+        pass
