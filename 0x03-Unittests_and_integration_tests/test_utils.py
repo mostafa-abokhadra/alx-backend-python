@@ -53,16 +53,17 @@ class TestGetJson(unittest.TestCase):
 class TestMemoize(unittest.TestCase):
     """test memoize class
     """
-    # @patch.object(__name__ + '.TestClass', "a_method")
     def test_memoize(self):
-        """test memoize
+        """test memoize function
         """
         class TestClass:
-            """test class
+            """test class inside tetsmemoize
             """
 
             def a_method(self):
                 """a - method
+                Returns:
+                    42
                 """
                 return 42
 
