@@ -57,8 +57,6 @@ class TestMemoize(unittest.TestCase):
         """test memoize function
         """
         class TestClass:
-            """inside calss that i don't know why we used it
-            """
 
             def a_method(self) -> int:
                 """cached method to be tested
