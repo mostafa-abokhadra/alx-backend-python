@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""testing access_nested_map module
+"""testing utils
 """
 import unittest
 from unittest.mock import Mock, patch
@@ -51,25 +51,25 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-    """test memoize class
+    """memeoiztion test class
     """
     def test_memoize(self):
         """test memoize function
         """
         class TestClass:
-            """test class inside tetsmemoize
+            """inside calss that i don't know why we used it
             """
 
             def a_method(self) -> int:
-                """a - method
+                """cached method to be tested
                 Returns:
-                    42
+                    42: int
                 """
                 return 42
 
             @memoize
             def a_property(self) -> callable:
-                """ a property
+                """called function to test a_method
                 Returns:
                     a callable: a_mehtod
                 """
