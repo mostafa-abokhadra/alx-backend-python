@@ -59,7 +59,7 @@ class TestMemoize(unittest.TestCase):
                 return 42
 
             @memoize
-            def a_property(self):
+            def a_property(self) -> callable:
                 return self.a_method()
         with patch.object(
                 TestClass,
