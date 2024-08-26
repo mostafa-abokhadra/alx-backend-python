@@ -51,31 +51,22 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-    """memeoiztion test class
-    """
-    def test_memoize(self):
-        """test memoize function
-        """
+    """Tests the memoize function."""
+    def test_memoize(self) -> None:
+        """Tests memoize's output"""
         class TestClass:
-            """inside calss that i don't know why we used it
-            """
-            def a_method(self) -> int:
-                """cached method to be tested
-                Returns:
-                    42: int
-                """
+            def a_method(self):
                 return 42
 
             @memoize
-            def a_property(self) -> callable:
-                """called function to test a_method
-                Returns:
-                    a callable: a_mehtod
-                """
+            def a_property(self):
                 return self.a_method()
-        with patch.object(TestClass, "a_method") as mock_method:
-            mock_method.return_value = 42
-            obj = TestClass()
-            obj.a_property
-            obj.a_property
+        with patch.object(
+                TestClass,
+                "a_method",
+                return_value=lambda: 42,
+                ) as mock_method:
+            test_class = TestClass()
+            self.assertEqual(test_class.a_property(), 42)
+            self.assertEqual(test_class.a_property(), 42)
             mock_method.assert_called_once()
