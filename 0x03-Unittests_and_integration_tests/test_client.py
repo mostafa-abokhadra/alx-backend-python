@@ -2,7 +2,7 @@
 """test_client module
 """
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 from client import GithubOrgClient
 from parameterized import parameterized
 # from utils import get_json
@@ -11,9 +11,9 @@ from parameterized import parameterized
 class TestGithubOrgClient(unittest.TestCase):
     """ testing some class
     """
-    @parameterized.expand(["google","abc"])
+    @parameterized.expand(["google", "abc"])
     @patch('client.get_json')
-    def test_org(self, org, mock_get_json):
+    def test_org(self, org: str, mock_get_json: MagicMock) -> None:
         """testing organization
         """
         res = {"name": "mostafa abokhadra"}
